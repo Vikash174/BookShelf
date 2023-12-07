@@ -10,6 +10,7 @@ const AddBookForm = () => {
   const currentEditingBook = useSelector(
     (state) => state.books.currentBookForEditing
   );
+  const bookList = useSelector((state) => state.books.books);
 
   const bookName = useRef(null);
   const ISBN_No = useRef(null);
@@ -20,6 +21,22 @@ const AddBookForm = () => {
   const bookAvailbility = useRef(null);
 
   const bookAvailbilityBoolean = bookAvailbility === "Available" ? true : false;
+
+  const isISBNUnique = (bookList, newBook) => {
+    const existingISBNs = new Set();
+
+    for (const book of bookList) {
+      if (existingISBNs.has(book.isbn)) {
+        // Duplicate ISBN found
+        return false;
+      }
+
+      existingISBNs.add(book.isbn);
+    }
+
+    // ISBN is unique
+    return true;
+  };
 
   const addBookClickHandler = () => {
     // validate the inputs
@@ -37,9 +54,12 @@ const AddBookForm = () => {
 
     const validationErrors = validateInputs(book);
 
-    if (validationErrors.length !== 0) {
+    const isISBNUni = isISBNUnique(bookList, book);
+
+    if (validationErrors.length !== 0 || !isISBNUni) {
       console.log(validationErrors);
       alert("Validation errors:", validationErrors);
+      return;
     }
 
     dispatch(addBook(book));
