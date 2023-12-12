@@ -25,14 +25,15 @@ const Header = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row justify-between p-5 shadow-lg items-center w-full md:w-[80vw] lg:w-[70vw] xl:w-[60vw] mx-auto">
+    <div className="flex flex-col sm:flex-row  justify-between p-5 shadow-lg items-center w-full ">
       <div>
         <h1 className="text-xl font-bold">BookShelf</h1>
       </div>
 
       <div className="flex items-center mt-3 md:mt-0">
         <input
-          className="p-2 rounded-l-full w-full md:w-64 bg-gray-200 border border-[#ffffff33]"
+          id="book_search_input_box"
+          className="p-2 rounded-l-full w-full md:w-64 lg:w-96 bg-gray-200 border border-[#ffffff33]"
           type="text"
           placeholder="Search books by Name or ISBN Number"
           value={searchTerm}

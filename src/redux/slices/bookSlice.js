@@ -4,6 +4,8 @@ const initialState = {
   books: [],
   showBookForm: false,
   showDeletWarning: false,
+  showInputErrors: false,
+  inputErrorMsg: "",
   currentBookForEditing: null,
   currentBookForDeleting: null,
   searchTerm: "",
@@ -29,6 +31,12 @@ export const bookSlice = createSlice({
     setShowDeleteWarning: (state, action) => {
       state.showDeletWarning = action.payload;
     },
+    setInputErrorMsg: (state, action) => {
+      state.showInputErrors = action.payload;
+    },
+    updateInputErrorMsg: (state, action) => {
+      state.inputErrorMsg = action.payload;
+    },
     updateBooksArray: (state, action) => {
       state.books = action;
     },
@@ -47,5 +55,7 @@ export const {
   setShowDeleteWarning,
   updateBooksArray,
   setSearchTerm,
+  setInputErrorMsg,
+  updateInputErrorMsg,
 } = bookSlice.actions;
 export default bookSlice.reducer;

@@ -23,7 +23,7 @@ const BookCard = (props) => {
   };
 
   return (
-    <div className=" border border-black p-5 rounded-lg m-2">
+    <div className="border border-black p-5 rounded-lg m-2 shadow-md ">
       <div>
         <h2>
           <strong>Book Title: </strong>
@@ -46,8 +46,7 @@ const BookCard = (props) => {
           {book.count}
         </h2>
         <h2>
-          <strong>Cost: </strong>
-          {book.cost}
+          <strong>Cost: </strong>₹ {book.cost}
         </h2>
         <h2>
           <strong>Is Available: </strong>
@@ -55,9 +54,9 @@ const BookCard = (props) => {
         </h2>
       </div>
 
-      <div className="flex flex-col md:flex-row gap-5 md:justify-between">
+      <div className="flex flex-col md:flex-row gap-5 md:justify-between mt-5">
         <button
-          className="p-1 border border-black rounded-md md:rounded-l-md md:rounded-r-none"
+          className="p-1 border border-black rounded-md"
           onClick={() => editClickHandler(book)}
         >
           Edit
@@ -65,7 +64,7 @@ const BookCard = (props) => {
         </button>
 
         <button
-          className="p-1 border border-black rounded-md md:rounded-r-md md:rounded-l-none mt-2 md:mt-0"
+          className="p-1 border border-black rounded-md"
           onClick={() => deleteClickHandler(book)}
         >
           Delete

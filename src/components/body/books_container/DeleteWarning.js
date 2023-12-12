@@ -26,7 +26,6 @@ const DeleteWarning = () => {
       (book) => book.isbn !== bookToDelete.isbn
     );
 
-    console.log("Deleted the object");
     return Array.from(updatedBookList);
   }
 
