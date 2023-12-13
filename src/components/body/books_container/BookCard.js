@@ -18,8 +18,8 @@ const BookCard = (props) => {
     dispatch(setShowBookForm(true));
   };
   const deleteClickHandler = (book) => {
-    dispatch(setShowDeleteWarning(true));
     dispatch(addBookForDeleting(book));
+    dispatch(setShowDeleteWarning(true));
   };
 
   return (

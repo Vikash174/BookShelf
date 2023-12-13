@@ -1,39 +1,20 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  addBook,
-  addBookForDeleting,
+  deletBookByNameOrIsbn,
   setShowDeleteWarning,
-  updateBooksArray,
 } from "../../../redux/slices/bookSlice";
 
 const DeleteWarning = () => {
   const dispatch = useDispatch();
-  const currentBookList = useSelector((state) => state.books.books);
 
   const currentBookForDeleting = useSelector(
     (state) => state.books.currentBookForDeleting
   );
 
-  function arrayFromObject(arrayLikeObject) {
-    return Array.from(arrayLikeObject);
-  }
-
-  function deleteBook(bookList, bookToDelete) {
-    const resultArray = arrayFromObject(bookList);
-
-    const updatedBookList = resultArray.filter(
-      (book) => book.isbn !== bookToDelete.isbn
-    );
-
-    return Array.from(updatedBookList);
-  }
-
   const yesClickHandler = () => {
+    dispatch(deletBookByNameOrIsbn(currentBookForDeleting));
     dispatch(setShowDeleteWarning(false));
-    dispatch(
-      updateBooksArray(deleteBook(currentBookList, currentBookForDeleting))
-    );
   };
 
   const noClickHandler = () => {

@@ -18,7 +18,12 @@ export const bookSlice = createSlice({
     addBook: (state, action) => {
       state.books.push(action.payload);
     },
-    deletBookByNameOrIsbn: (state, action) => {},
+    deletBookByNameOrIsbn: (state, action) => {
+      let arr = state.books.filter((book) => book.name !== action.payload.name);
+
+      console.log(arr);
+      state.books = arr;
+    },
     setShowBookForm: (state, action) => {
       state.showBookForm = action.payload;
     },

@@ -18,8 +18,6 @@ const AddBookForm = () => {
   const inputErrorMsg = useSelector((state) => state.books.inputErrorMsg);
   const showInputErrors = useSelector((state) => state.books.showInputErrors);
 
-  const bookList = useSelector((state) => state.books.books);
-
   const bookName = useRef(null);
   const ISBN_No = useRef(null);
   const bookCategory = useRef(null);
@@ -29,6 +27,9 @@ const AddBookForm = () => {
   const bookAvailbility = useRef(null);
 
   const addBookClickHandler = () => {
+    console.log("save btn clicked");
+    // Validate Data
+
     const book = {
       name: bookName.current.value,
       isbn: ISBN_No.current.value,
@@ -36,34 +37,10 @@ const AddBookForm = () => {
       rowNo: bookRowNo.current.value,
       count: bookCount.current.value,
       cost: bookCost.current.value,
-      isAvailable: bookAvailbility.current.value === "Available" ? "Yes" : "No",
+      isAvailable: bookAvailbility.current.value,
     };
-
-    const currentBook = bookList.find(
-      (currBook) => book.name === currBook.name
-    );
-
-    console.log(currentBook);
-
-    let index = bookList.findIndex((book) => book.name === currentBook.name);
-    console.log(index);
-    console.log(typeof bookList, bookList);
-    bookList.splice(index, 1);
-
-    console.log(bookList);
-
-    let validationErrors = validateInputs(book).toString();
-
-    if (validationErrors.length !== 0) {
-      console.log(validationErrors);
-      dispatch(updateInputErrorMsg(validationErrors));
-      dispatch(setInputErrorMsg(true));
-      return;
-    }
-
     dispatch(addBook(book));
     dispatch(setShowBookForm(false));
-    dispatch(setInputErrorMsg(false));
   };
 
   const closeClickHandler = () => {
@@ -157,7 +134,7 @@ const AddBookForm = () => {
               className="border border-black"
               defaultValue={currentEditingBook?.isAvailable}
             >
-              <option value={false}> Available </option>
+              <option value={true}> Available </option>
               <option value={false}> Unavailable </option>
             </select>
           </label>
