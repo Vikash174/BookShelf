@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+As part of an online assessment test on HackerEarth, I took on the challenge of building a dynamic and user-friendly application that allows book enthusiasts to manage their personal libraries effortlessly. Now that the hackathon has concluded, I'm excited to open-source the project and share it with all of you on GitHub and LinkedIn!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+📖 Key Features:
 
-## Available Scripts
+Intuitive Book Management: Users can seamlessly add books to their virtual bookshelves, providing details such as book name, ISBN number, category, quantity, cost, and availability.
 
-In the project directory, you can run:
+Edit and Delete Functionality: The Bookshelf App empowers users with the ability to edit or remove books from their collection, ensuring maximum flexibility and control.
 
-### `npm start`
+Effortless Search: Looking for a specific book? The app allows users to search by book name or ISBN number, making it easy to find and organize their literary treasures.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+💻 Tech Stack:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+I built this application using cutting-edge technologies to ensure a smooth and modern user experience:
 
-### `npm test`
+React JS: Powering the front end for a dynamic and responsive interface.
+JavaScript: The backbone of the application, providing functionality and interactivity.
+Tailwind CSS: Styling the app with a clean and aesthetic design.
+React Redux Toolkit: Managing state efficiently for a seamless user experience.
+👨‍💻 Why Open Source?
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+I believe in the power of collaboration and learning from one another. By open-sourcing this project, I hope to contribute to the developer community and inspire others to explore the world of React, JavaScript, Tailwind CSS, and Redux Toolkit. Feel free to check out the code on GitHub and let me know your thoughts and suggestions!
 
-### `npm run build`
+🙏 Acknowledgments:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+A big shoutout to HackerEarth for providing a platform that fuels innovation and challenges developers to push their boundaries.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+I'm looking forward to hearing your feedback and seeing how the Bookshelf App can be a valuable addition to your projects or inspire your next coding adventure. Let's keep the conversation going! 🚀📚 #CodingCommunity #OpenSource #ReactJS #JavaScript #GitHub #BookshelfApp #TechInnovation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Try Live Demo : https://vercel.com/vikash-rais-projects/book-shelf
