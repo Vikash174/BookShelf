@@ -47,7 +47,9 @@ const AddBookForm = () => {
       dispatch(updateInputErrorMsg(validationErrors.toString()));
       return;
     }
-    dispatch(deletBookByNameOrIsbn(currentEditingBook));
+    if (currentEditingBook !== null) {
+      dispatch(deletBookByNameOrIsbn(currentEditingBook));
+    }
     dispatch(addBook(book));
     dispatch(setShowBookForm(false));
   };
@@ -81,7 +83,9 @@ const AddBookForm = () => {
             <input
               id="name_input"
               ref={bookName}
-              defaultValue={currentEditingBook?.name}
+              defaultValue={
+                currentEditingBook === null ? "" : currentEditingBook?.name
+              }
               className="border border-black"
               type="text"
             />
@@ -91,7 +95,9 @@ const AddBookForm = () => {
             <input
               id="isbn_input"
               ref={ISBN_No}
-              defaultValue={currentEditingBook?.isbn}
+              defaultValue={
+                currentEditingBook === null ? "" : currentEditingBook?.isbn
+              }
               className="border border-black"
               type="text"
             />
@@ -103,7 +109,9 @@ const AddBookForm = () => {
               ref={bookCategory}
               className="border border-black"
               type="text"
-              defaultValue={currentEditingBook?.category}
+              defaultValue={
+                currentEditingBook === null ? "" : currentEditingBook?.category
+              }
             />
           </label>
           <label className="flex justify-between py-1">
@@ -113,7 +121,9 @@ const AddBookForm = () => {
               ref={bookRowNo}
               className="border border-black"
               type="text"
-              defaultValue={currentEditingBook?.rowNo}
+              defaultValue={
+                currentEditingBook === null ? "" : currentEditingBook?.rowNo
+              }
             />
           </label>
           <label className="flex justify-between py-1">
@@ -123,7 +133,9 @@ const AddBookForm = () => {
               ref={bookCount}
               className="border border-black"
               type="text"
-              defaultValue={currentEditingBook?.count}
+              defaultValue={
+                currentEditingBook === null ? "" : currentEditingBook?.count
+              }
             />
           </label>
           <label className="flex justify-between py-1">
@@ -133,7 +145,9 @@ const AddBookForm = () => {
               ref={bookCost}
               className="border border-black"
               type="text"
-              defaultValue={currentEditingBook?.cost}
+              defaultValue={
+                currentEditingBook === null ? "" : currentEditingBook?.cost
+              }
             />
           </label>
           <label className="flex justify-between py-1">
@@ -142,7 +156,11 @@ const AddBookForm = () => {
               id="availbility_input"
               ref={bookAvailbility}
               className="border border-black"
-              defaultValue={currentEditingBook?.isAvailable}
+              defaultValue={
+                currentEditingBook === null
+                  ? ""
+                  : currentEditingBook?.isAvailable
+              }
             >
               <option value={true}> Available </option>
               <option value={false}> Unavailable </option>

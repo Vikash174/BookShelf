@@ -13,7 +13,9 @@ const BookContainer = () => {
       book.isbn.toLowerCase().includes(searchTerm)
   );
 
-  return bookList.length === 0 ? (
+  console.log(filteredBooks);
+
+  return filteredBooks.length === 0 ? (
     <div className="mt-10 p-5 flex flex-col items-center gap-5">
       <img
         className="m-6"
