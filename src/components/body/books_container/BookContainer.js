@@ -6,7 +6,7 @@ const BookContainer = () => {
   const bookList = useSelector((state) => state.books.books);
   const searchTerm = useSelector((state) => state.books.searchTerm);
   const showDeletWarning = useSelector((state) => state.books.showDeletWarning);
-  console.log(showDeletWarning);
+
   const filteredBooks = bookList.filter(
     (book) =>
       book.name.toLowerCase().includes(searchTerm) ||
