@@ -5,7 +5,8 @@ import BookCard from "./BookCard";
 const BookContainer = () => {
   const bookList = useSelector((state) => state.books.books);
   const searchTerm = useSelector((state) => state.books.searchTerm);
-
+  const showDeletWarning = useSelector((state) => state.books.showDeletWarning);
+  console.log(showDeletWarning);
   const filteredBooks = bookList.filter(
     (book) =>
       book.name.toLowerCase().includes(searchTerm) ||
@@ -25,7 +26,13 @@ const BookContainer = () => {
     </div>
   ) : (
     <>
-      <div className="flex flex-wrap p-5 w-full md:w-[80vw] lg:w-[70vw] xl:w-[60vw] ">
+      <div
+        className={
+          showDeletWarning === true
+            ? "flex flex-wrap p-5 w-full md:w-[80vw] lg:w-[70vw] xl:w-[60vw] opacity-25 pointer-events-none"
+            : "flex flex-wrap p-5 w-full md:w-[80vw] lg:w-[70vw] xl:w-[60vw] "
+        }
+      >
         {filteredBooks.map((book) => {
           return (
             <div

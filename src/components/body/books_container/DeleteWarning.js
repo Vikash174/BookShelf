@@ -25,7 +25,8 @@ const DeleteWarning = () => {
     <div className="fixed top-[45%] p-4 bg-slate-200">
       <div>
         <h2 className="text-xl font-semibold">
-          Are you sure to delete the book
+          All the books with this name will be deleted. Are you sure to delete
+          the book
         </h2>
       </div>
       <div>

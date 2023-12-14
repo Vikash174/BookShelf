@@ -21,7 +21,6 @@ export const bookSlice = createSlice({
     deletBookByNameOrIsbn: (state, action) => {
       let arr = state.books.filter((book) => book.name !== action.payload.name);
 
-      console.log(arr);
       state.books = arr;
     },
     setShowBookForm: (state, action) => {

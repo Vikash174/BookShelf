@@ -4,6 +4,8 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addBook,
+  addBookForEditing,
+  deletBookByNameOrIsbn,
   setInputErrorMsg,
   setShowBookForm,
   updateInputErrorMsg,
@@ -27,7 +29,6 @@ const AddBookForm = () => {
   const bookAvailbility = useRef(null);
 
   const addBookClickHandler = () => {
-    console.log("save btn clicked");
     // Validate Data
 
     const book = {
@@ -39,6 +40,13 @@ const AddBookForm = () => {
       cost: bookCost.current.value,
       isAvailable: bookAvailbility.current.value,
     };
+
+    const validationErrors = validateInputs(book);
+    if (validationErrors.length !== 0) {
+      dispatch(updateInputErrorMsg(validationErrors.toString()));
+      return;
+    }
+    dispatch(deletBookByNameOrIsbn(currentEditingBook));
     dispatch(addBook(book));
     dispatch(setShowBookForm(false));
   };
@@ -46,6 +54,7 @@ const AddBookForm = () => {
   const closeClickHandler = () => {
     dispatch(setShowBookForm(false));
     dispatch(setInputErrorMsg(false));
+    dispatch(addBookForEditing(null));
   };
 
   return (
