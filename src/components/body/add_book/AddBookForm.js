@@ -43,6 +43,7 @@ const AddBookForm = () => {
 
     const validationErrors = validateInputs(book);
     if (validationErrors.length !== 0) {
+      dispatch(setInputErrorMsg(true));
       dispatch(updateInputErrorMsg(validationErrors.toString()));
       return;
     }
